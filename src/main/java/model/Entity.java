@@ -5,14 +5,14 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
-/*
+/**
  * Clase abstracta base para todas las entidades del juego.
  * Define posición, sprite, dirección y tamaño.
  * Las subclases deben implementar el método update()
  */
 public abstract class Entity {
 
-    /*
+    /**
      * Constantes para el manejo de dirección de las entidades
      */
     protected static final int DIR_NONE = 0;
@@ -38,7 +38,7 @@ public abstract class Entity {
     // Dirección actual de la entidad
     private int direction;
 
-    /*
+    /**
      * Constructor de la entidad
      * Inicializa posición, sprite y configura tamaño automáticamente
      */
@@ -57,19 +57,19 @@ public abstract class Entity {
         this.direction = DIR_NONE;
     }
 
-    /*
+    /**
      * Cada subclase debe definir su propia lógica de actualización
      */
     public abstract void update();
 
-    /*
+    /**
      * Método para obtener la caja de colisión actual (HitBox)
      */
     public Rectangle getHitBox(){
         return new Rectangle(x, y, width, height);
     }
 
-    /*
+    /**
      * Método para calcular una colisión futura
      * @param px posición futura en X
      * @param py posición futura en Y
@@ -79,7 +79,7 @@ public abstract class Entity {
         return new Rectangle(px, py, width, height);
     }
 
-    /*
+    /**
      * Calcula el desplazamiento horizontal según la dirección actual.
      * Devuelve -1, 0 o +1.
      */
@@ -89,7 +89,7 @@ public abstract class Entity {
         return 0;
     }
 
-    /*
+    /**
      * Calcula el desplazamiento vertical según la dirección actual.
      * Devuelve -1, 0 o +1.
      */
@@ -99,7 +99,7 @@ public abstract class Entity {
         return 0;
     }
 
-    /*
+    /**
      * Carga una imagen desde la carpeta de recursos.
      * Uso: Entidad.cargarImagen("pacman_left.png")
      */
@@ -117,7 +117,7 @@ public abstract class Entity {
         }
     }
 
-    /*
+    /**
      Métodos getters y setters
     */
     public int getX() {
